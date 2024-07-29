@@ -10,6 +10,9 @@ export default {
       lighter: "#eceff2",
       light: "#d4dbe3",
     },
+    fontFamily: {
+      monospace: `"IBM Plex Mono", monospace`,
+    },
     extend: {},
   },
   plugins: [],
