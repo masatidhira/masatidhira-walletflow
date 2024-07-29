@@ -9,6 +9,8 @@ export default {
       lightest: "#f6f7f9",
       lighter: "#eceff2",
       light: "#d4dbe3",
+      blue: "#0369a1",
+      red: "#be185d",
     },
     fontFamily: {
       monospace: `"IBM Plex Mono", monospace`,
