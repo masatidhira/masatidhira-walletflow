@@ -1,22 +1,29 @@
 import moment from "moment";
 import Item from "./components/Item";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const today = moment().format("DD MMM YYYY");
+  const userEmail = "masatidhira@test.com";
+  const [transactions, setTransactions] = useState(null);
 
-  const ListOfItem = [
-    {
-      title: "allowance from father and many more",
-      nominal: "100,000",
-      type: "income",
-    },
-    { title: "allowance from mom", nominal: "100,000", type: "income" },
-    {
-      title: "electricity token payments",
-      nominal: "50,000",
-      type: "expense",
-    },
-  ];
+  const getData = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5050/transactions/${userEmail}`
+      );
+      const json = await response.json();
+      setTransactions(json);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => getData, []);
+
+  transactions?.sort((a, b) => new Date(b.date) - new Date(a.date));
+  console.log(transactions);
+
+  const today = moment().format("DD MMM YYYY");
 
   return (
     <div className="w-full max-w-2xl min-h-screen mx-auto p-4 flex flex-col font-monospace">
@@ -42,7 +49,7 @@ const App = () => {
           <span>{today}</span>
         </p>
         <div className="card flex-col gap-2">
-          {ListOfItem.map((item, index) => (
+          {transactions?.map((item, index) => (
             <Item data={item} key={index} />
           ))}
         </div>

@@ -15,4 +15,10 @@ CREATE TABLE users (
     hashed_password VARCHAR(255)
 );
 
-INSERT INTO transactions(id, user_email, transaction_type, title, nominal, date) VALUES('0', 'masatidhira@test.com', 'income', 'Uang saku dari Ibu', 50000, '05 Aug 2024 01:25:10');
+INSERT INTO transactions(id, user_email, transaction_type, title, nominal, date) VALUES('0', 'masatidhira@test.com', 'income', 'allowance from mom', 50000, '05 Aug 2024 01:25:10');
+
+INSERT INTO transactions(id, user_email, transaction_type, title, nominal, date) VALUES('1', 'masatidhira@test.com', 'expense', 'electricity token payments', 50000, '07 Aug 2024 01:25:10');
+
+INSERT INTO transactions(id, user_email, transaction_type, title, nominal, date) VALUES('2', 'masatidhira@test.com', 'income', 'allowance from father', 100000, '08 Aug 2024 01:25:10');
+
+INSERT INTO transactions(id, user_email, transaction_type, title, nominal, date) VALUES('3', 'masatidhira@test.com', 'expense', 'electricity token payments', 100000, '04 Aug 2024 01:25:10');
